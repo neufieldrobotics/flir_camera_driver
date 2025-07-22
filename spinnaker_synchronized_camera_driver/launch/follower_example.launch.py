@@ -42,9 +42,27 @@ pay4_camera_list = {
     'cam0': '25074480',
     'cam1': '25040393',
 }
-camera_list=pay0_camera_list
 
-print("\n\nMake sure using the right camera serial numbers! Currently using the numbers for payload 4\n\n")
+username_to_camera_list = {
+    'payload0': pay0_camera_list,
+    'payload1': {},
+    'payload2': {},
+    'payload3': {},
+    'payload4': pay4_camera_list,
+}
+
+import os
+computer_hostname = os.uname()[1]
+computer_username = os.getenv('USER', 'unknown')
+if computer_username in username_to_camera_list:
+    camera_list = username_to_camera_list[computer_username]
+else:
+    raise RuntimeError(
+        f'Unknown hostname {computer_hostname} for user {computer_username}, '
+        'do not know camera serial numbers. '
+    )
+
+
 
 exposure_controller_parameters = {
     'brightness_target': 120,  # from 0..255
