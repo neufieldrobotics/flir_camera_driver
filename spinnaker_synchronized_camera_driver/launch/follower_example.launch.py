@@ -34,10 +34,11 @@ from launch_ros.actions import ComposableNodeContainer
 from launch_ros.descriptions import ComposableNode
 from launch_ros.substitutions import FindPackageShare
 
-camera_list = {
-    'cam0': '20435008',
-    'cam1': '20415937',
+pay4_camera_list = {
+    'cam0': '25074480',
+    'cam1': '25040393',
 }
+camera_list=pay4_camera_list
 
 exposure_controller_parameters = {
     'brightness_target': 120,  # from 0..255
