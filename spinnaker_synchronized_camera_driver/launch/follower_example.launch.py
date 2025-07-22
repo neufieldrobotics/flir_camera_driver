@@ -37,13 +37,14 @@ from launch_ros.substitutions import FindPackageShare
 pay0_camera_list = {
     'cam0': '25104121',
     'cam1': '25094299',
+}
 pay4_camera_list = {
     'cam0': '25074480',
     'cam1': '25040393',
 }
-camera_list=pay4_camera_list
+camera_list=pay0_camera_list
 
-rospy.warning("Make sure using the right camera serial numbers! Currently using the numbers for payload 4")
+print("\n\nMake sure using the right camera serial numbers! Currently using the numbers for payload 4\n\n")
 
 exposure_controller_parameters = {
     'brightness_target': 120,  # from 0..255
