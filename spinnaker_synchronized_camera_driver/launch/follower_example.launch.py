@@ -38,6 +38,10 @@ pay0_camera_list = {
     'cam0': '25104121',
     'cam1': '25094299',
 }
+pay2_camera_list = {
+    'cam0': '25104123',
+    'cam1': '25094302',
+}
 pay3_camera_list = {
     'cam0': '25094300',
     'cam1': '25113097',
@@ -50,7 +54,7 @@ pay4_camera_list = {
 hostname_to_camera_list = {
     'payload0': pay0_camera_list,
     'payload1': {},
-    'payload2': {},
+    'nuroampayload02': pay2_camera_list,
     'neuroam-desktop': pay3_camera_list,
     'payload4': pay4_camera_list,
 }
