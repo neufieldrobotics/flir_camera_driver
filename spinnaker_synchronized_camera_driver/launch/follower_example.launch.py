@@ -92,6 +92,7 @@ cam_parameters = {
     'quiet': True,
     'binning_x': 2,
     'binning_y': 2,
+    'pixel_format': 'BayerRG8',
     'buffer_queue_size': 1,
     'compute_brightness': True,
     'exposure_auto': 'Off',
