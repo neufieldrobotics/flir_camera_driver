@@ -150,6 +150,18 @@ def make_parameters(context):
         driver_parameters.update(cam_params)  # insert into main parameter list
         # link the camera to its exposure controller. Each camera has its own controller
         driver_parameters.update({cam + '.exposure_controller_name': cam + '.exposure_controller'})
+
+        # --- Add image_transport/compressed settings for each camera ---
+        # Assuming the driver publishes 'image_raw' and potentially 'image_color'
+        # The 'compressed' plugin often registers under these topics.
+        # This will make the 'compressed' image_transport plugin publish PNGs for the 'image_raw' topic.
+        driver_parameters.update({f'cam_sync.{cam}' + '.image_raw.format' : 'png'})
+        driver_parameters.update({f'cam_sync.{cam}' + '.image_raw.png_level' : 0})
+
+        driver_parameters.update({f'cam_sync.{cam}' + '.image_raw.encoding' : 'rgb8'})
+        driver_parameters.update({f'cam_sync.{cam}' + '.image_raw.pixel_format' : 'rgb8'})
+        # ----------------------------------------------------------------
+    # print(driver_parameters)
     return driver_parameters
 
 
