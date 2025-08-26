@@ -77,13 +77,13 @@ else:
 
 
 exposure_controller_parameters = {
-    'brightness_target': 80,  # from 0..255
+    'brightness_target': 100,  # from 0..255
     'brightness_tolerance': 20,  # when to update exposure/gain
     # watch that max_exposure_time is short enough
     # to support the trigger frame rate!
-    'max_exposure_time': 12000,  # usec
+    'max_exposure_time': 8000,  # usec
     'min_exposure_time': 4000,  # usec
-    'max_gain': 15.0,
+    'max_gain': 10.0,
     'gain_priority': False,
 }
 
